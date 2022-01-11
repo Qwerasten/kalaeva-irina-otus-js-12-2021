@@ -1,1 +1,1 @@
-# kalaeva-irina-otus-js-12-2021
+# kalaeva-irina-otus
