@@ -1,6 +1,24 @@
-/*Задание 2.
 
-Написать функцию sum, которая может быть исполнена любое количество раз с не undefined аргументом. 
-Если она исполнена без аргументов, то возвращает значение суммы всех переданных до этого значений. 
+function sum(arg) {
+    if (arg === undefined) return;
+    let summa = arg;
+    return function innerSum(nextArg) {
+        if (nextArg == undefined) {
+            return summa;
+        }
+        else {
+            summa += nextArg;
+            return innerSum;
+        }
+    }
+}
 
-sum(1)(2)(3)....(n)() === 1 + 2 + 3 + ... + n*/
+//test
+let sum1 = sum(1)(2)(3)(4)(5)(6)();
+let sum2 = sum(10)(20)(30)();
+let sum3 = sum(5)();
+
+
+console.log(sum1);
+console.log(sum2);
+console.log(sum3);
